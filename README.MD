@@ -3,7 +3,7 @@
 ---
  - [x] configure application.properties  
  - [x] create package for controller, service, model, and repository  
- - [ ] create Movie Entity  
+ - [x] create Movie Entity  
  - [ ] create repository class for Movie Entity  
  - [ ] create service class for Movie  
  	- [ ] implement methods for each CRUD Operation  
