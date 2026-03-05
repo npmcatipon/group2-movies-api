@@ -22,6 +22,7 @@ public class MovieService {
 		return movieRepo.save(movie);
 	}
 	
+	
 	//GET MOVIE
 	public List<Movie> getAllMovies() {
 		return movieRepo.findAll();
