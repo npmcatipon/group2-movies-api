@@ -65,7 +65,6 @@ public class Movie {
 	public void setCast(String cast) {
 		this.cast = cast;
 	}
-
 	
 	public String getDirector() {
 		return director;
