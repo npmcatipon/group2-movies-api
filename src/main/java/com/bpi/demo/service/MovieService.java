@@ -18,7 +18,12 @@ public class MovieService {
 	
 	//ADD MOVIE
 	public Movie addMovie(Movie movie) {
-		return movieRepo.save(movie);
+		Movie newMovie = new Movie();
+		newMovie.setTitle(movie.getTitle());
+		newMovie.setDirector(movie.getDirector());
+		newMovie.setCastMembers(movie.getCastMembers());
+		newMovie.setReleaseDate(movie.getReleaseDate());
+		return movieRepo.save(newMovie);
 	}
 	
 	//GET MOVIE
@@ -27,7 +32,23 @@ public class MovieService {
 	}
 	
 	//UPDATE MOVIE
-	
+	public Movie updateMovie(Long id, Movie update) {
+		Movie uMovie = movieRepo.findById(id)
+				.orElseThrow(() -> new RuntimeException("Movie not found."));
+		if(update.getTitle() != null) {
+			uMovie.setTitle(update.getTitle());
+		}		
+		if(update.getDirector() != null) {
+			uMovie.setDirector(update.getDirector());
+		}
+		if(update.getCastMembers() != null) {
+			uMovie.setCastMembers(update.getCastMembers());
+		}
+		if(update.getReleaseDate() != null) {
+			uMovie.setReleaseDate(update.getReleaseDate());
+		}
+		return movieRepo.save(uMovie);
+	}
 	//DELETE MOVIE
 	public void deleteMovie(Long id) {
 		movieRepo.deleteById(id);
