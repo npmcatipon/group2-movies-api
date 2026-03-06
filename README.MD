@@ -4,9 +4,9 @@
  - [x] configure application.properties  
  - [x] create package for controller, service, model, and repository  
  - [x] create Movie Entity  
- - [ ] create repository class for Movie Entity  
- - [ ] create service class for Movie  
- 	- [ ] implement methods for each CRUD Operation  
- - [ ] create controller class for Movie (MovieController)
- 	- [ ] create endpoint for each CRUD operation
- 	- [ ] dependency is MovieService
+ - [x] create repository class for Movie Entity  
+ - [x] create service class for Movie  
+ 	- [x] implement methods for each CRUD Operation  
+ - [x] create controller class for Movie (MovieController)
+ 	- [x] create endpoint for each CRUD operation
+ 	- [x] dependency is MovieService
