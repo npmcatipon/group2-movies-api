@@ -17,17 +17,14 @@ public class Movie {
 	@GeneratedValue( strategy = GenerationType.IDENTITY )
 	private long id;
 	
-	@Column ( nullable = false )
 	private String title;
 	
-	@Column ( nullable = false )
+	@Column( name = "cast_list" )
 	private String cast;
 	
-	@Column ( nullable = false )
 	private String director;
 	
-	@Column ( nullable = false ,
-			  columnDefinition = "TIMESTAMP" )
+	@Column( name = "release_year" )
 	private Timestamp year;
 	
 	public Movie () {
@@ -36,6 +33,13 @@ public class Movie {
 
 	public Movie(long id, String title, String cast, String director, Timestamp year) {
 		this.id = id;
+		this.title = title;
+		this.cast = cast;
+		this.director = director;
+		this.year = year;
+	}
+	
+	public Movie(String title, String cast, String director, Timestamp year) {
 		this.title = title;
 		this.cast = cast;
 		this.director = director;
