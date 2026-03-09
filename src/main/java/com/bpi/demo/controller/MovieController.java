@@ -25,8 +25,8 @@ public class MovieController {
 	}
 
 	@GetMapping
-	public List<Movie> getMovies(@RequestParam(required = false) String movie) {
-		return movieService.getAllMovies();
+	public List<Movie> getMovies(@RequestParam(required = false) Long id) {
+		return (id == null ? movieService.getAllMovies() : movieService.findById(id));
 	}
 
 	@PostMapping
