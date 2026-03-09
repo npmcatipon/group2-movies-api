@@ -21,25 +21,25 @@ public class Movie {
 	private String title;
 	
 	@Column ( nullable = false )
-	private String cast;
+	private String castMembers;
 	
 	@Column ( nullable = false )
 	private String director;
 	
 	@Column ( nullable = false ,
 			  columnDefinition = "TIMESTAMP" )
-	private Timestamp year;
+	private String releaseDate;
 	
 	public Movie () {
 		
 	}
 
-	public Movie(long id, String title, String cast, String director, Timestamp year) {
+	public Movie(Long id, String title, String cast, String director, String releaseDate) {
 		this.id = id;
 		this.title = title;
-		this.cast = cast;
+		this.castMembers = cast;
 		this.director = director;
-		this.year = year;
+		this.releaseDate = releaseDate;
 	}
 
 	public long getId() {
@@ -58,12 +58,12 @@ public class Movie {
 		this.title = title;
 	}
 
-	public String getCast() {
-		return cast;
+	public String getCastMembers() {
+		return castMembers;
 	}
 
-	public void setCast(String cast) {
-		this.cast = cast;
+	public void setCastMembers(String castMembers) {
+		this.castMembers = castMembers;
 	}
 
 	
@@ -75,13 +75,19 @@ public class Movie {
 		this.director = director;
 	}
 
-	public Timestamp getYear() {
-		return year;
+
+	public String getReleaseDate() {
+		return releaseDate;
 	}
 
-	public void setYear(Timestamp year) {
-		this.year = year;
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
 	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	
 
 }
