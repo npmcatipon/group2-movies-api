@@ -1,9 +1,13 @@
 package com.bpi.demo.service;
 
 import java.util.List;
+
 import org.springframework.stereotype.Service;
+
 import com.bpi.demo.model.Movie;
 import com.bpi.demo.repository.MovieRepository;
+
+import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class MovieService {
@@ -22,6 +26,12 @@ public class MovieService {
 	// GET MOVIE
 	public List<Movie> getAllMovies() {
 		return movieRepo.findAll();
+	}
+
+	public List<Movie> findById(Long id) {
+		Movie movie = movieRepo.findById(id)
+				.orElseThrow(() -> new EntityNotFoundException("Movie ID not found."));
+		return List.of(movie);
 	}
 
 	// UPDATE MOVIE
