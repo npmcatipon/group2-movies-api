@@ -26,15 +26,14 @@ public class Movie {
 	@Column(nullable = false)
 	private String director;
 
-	@Column(nullable = false, columnDefinition = "TIMESTAMP")
+	@Column(nullable = false)
 	private String releaseDate;
 
 	public Movie() {
 
 	}
 
-	public Movie(Long id, String title, String cast, String director, String releaseDate) {
-		this.id = id;
+	public Movie(String title, String cast, String director, String releaseDate) {
 		this.title = title;
 		this.castMembers = cast;
 		this.director = director;
