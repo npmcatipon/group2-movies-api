@@ -12,30 +12,28 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "movie")
 public class Movie {
-	
+
 	@Id
-	@GeneratedValue( strategy = GenerationType.IDENTITY )
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	@Column ( nullable = false )
+
+	@Column(nullable = false)
 	private String title;
-	
-	@Column ( nullable = false )
+
+	@Column(nullable = false)
 	private String castMembers;
-	
-	@Column ( nullable = false )
+
+	@Column(nullable = false)
 	private String director;
-	
-	@Column ( nullable = false ,
-			  columnDefinition = "TIMESTAMP" )
+
+	@Column(nullable = false)
 	private String releaseDate;
-	
-	public Movie () {
-		
+
+	public Movie() {
+
 	}
 
-	public Movie(Long id, String title, String cast, String director, String releaseDate) {
-		this.id = id;
+	public Movie(String title, String cast, String director, String releaseDate) {
 		this.title = title;
 		this.castMembers = cast;
 		this.director = director;
@@ -66,7 +64,6 @@ public class Movie {
 		this.castMembers = castMembers;
 	}
 
-	
 	public String getDirector() {
 		return director;
 	}
@@ -74,7 +71,6 @@ public class Movie {
 	public void setDirector(String director) {
 		this.director = director;
 	}
-
 
 	public String getReleaseDate() {
 		return releaseDate;
@@ -87,7 +83,4 @@ public class Movie {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	
-
 }
